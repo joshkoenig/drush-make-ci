@@ -1,0 +1,114 @@
+; Packaging information for ten_steps_to_complex_learning
+name = "Ten Steps to Complex Learning"
+description = ""
+exclusive = "1"
+core = "7.x"
+; ----------
+; Dependencies
+; ----------
+; Administration
+dependencies[] = admin_devel
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = module_filter
+; Chaos tool suite
+dependencies[] = bulk_export
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = views_content
+; Core
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = update
+dependencies[] = user
+; Development
+dependencies[] = profiler_builder
+; ECK
+dependencies[] = eck
+dependencies[] = eck_example
+; Fields
+dependencies[] = entityreference
+; Markup
+dependencies[] = html5_tools
+; Other
+dependencies[] = elements
+dependencies[] = entity
+dependencies[] = queues
+; Pantheon
+dependencies[] = pantheon_api
+dependencies[] = pantheon_login
+; User interface
+dependencies[] = ckeditor
+; Views
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_ui
+; Features
+dependencies[] = features
+dependencies[] = features_builder
+
+; ----------
+; Variables
+; ----------
+variables[admin_theme] = 'seven'
+variables[block_cache] = 1
+variables[date_default_timezone] = 'America/Los_Angeles'
+variables[date_format_html5_tools_iso8601] = 'c'
+variables[entityreference:base-tables][comment][0] = 'comment'
+variables[entityreference:base-tables][comment][1] = 'cid'
+variables[entityreference:base-tables][eck_employee][0] = 'eck_eck_employee'
+variables[entityreference:base-tables][eck_employee][1] = 'id'
+variables[entityreference:base-tables][node][0] = 'node'
+variables[entityreference:base-tables][node][1] = 'nid'
+variables[entityreference:base-tables][queues][0] = 'queues'
+variables[entityreference:base-tables][queues][1] = 'qid'
+variables[entityreference:base-tables][queues_type][0] = 'queues_type'
+variables[entityreference:base-tables][queues_type][1] = 'id'
+variables[entityreference:base-tables][file][0] = 'file_managed'
+variables[entityreference:base-tables][file][1] = 'fid'
+variables[entityreference:base-tables][taxonomy_term][0] = 'taxonomy_term_data'
+variables[entityreference:base-tables][taxonomy_term][1] = 'tid'
+variables[entityreference:base-tables][taxonomy_vocabulary][0] = 'taxonomy_vocabulary'
+variables[entityreference:base-tables][taxonomy_vocabulary][1] = 'vid'
+variables[entityreference:base-tables][user][0] = 'users'
+variables[entityreference:base-tables][user][1] = 'uid'
+variables[features_builder_base_dir] = 'sites/all/modules/features'
+variables[features_builder_prefix_label] = 'Ten Steps to Complex Learning Distribution'
+variables[features_builder_prefix_name] = 'ten_steps_to_complex_learning_distribution'
+variables[filter_fallback_format] = 'plain_text'
+variables[node_admin_theme] = '1'
+variables[node_options_page][0] = 'status'
+variables[search_active_modules][apachesolr_search] = 'apachesolr_search'
+variables[search_active_modules][user] = 'user'
+variables[search_active_modules][node] = 0
+variables[search_default_module] = 'apachesolr_search'
+variables[theme_default] = 'bartik'
+variables[user_pictures] = '1'
+variables[user_picture_dimensions] = '1024x1024'
+variables[user_picture_file_size] = '800'
+variables[user_picture_style] = 'thumbnail'
+variables[user_register] = 2
+

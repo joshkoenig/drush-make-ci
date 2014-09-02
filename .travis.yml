@@ -42,6 +42,6 @@ after_script:
 notifications:
   email:
     recipients:
-      - panopoly-ci@googlegroups.com
+      # - panopoly-ci@googlegroups.com
     on_success: always
     on_failure: always

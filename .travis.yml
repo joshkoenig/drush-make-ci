@@ -10,18 +10,7 @@ mysql:
 
 env:
   - UPGRADE=none
-  - UPGRADE=7.x-1.11
-  - UPGRADE=7.x-1.10
-  - UPGRADE=7.x-1.9
-  - UPGRADE=7.x-1.8
-  - UPGRADE=7.x-1.6
-  - UPGRADE=7.x-1.5
-  - UPGRADE=7.x-1.4
-  - UPGRADE=7.x-1.2
-  - UPGRADE=7.x-1.1
-  - UPGRADE=7.x-1.0-rc5
-  - UPGRADE=7.x-1.0-rc4
-  - UPGRADE=7.x-1.0-rc3
+  - UPGRADE=7.x-1.11 
 
 matrix:
   fast_finish: true
@@ -33,7 +22,7 @@ install:
   - export UPDATE TRAVIS_BUILD_DIR
 
   # Copy the script into a stable location.
-  - cp scripts/travis-ci.sh $HOME/
+  # - cp scripts/travis-ci.sh $HOME/
 
   # Move to the directory above, where we should remain.
   - cd ..

@@ -22,7 +22,7 @@ install:
   # - cp scripts/travis-ci.sh $HOME/
 
   # Move to the directory above, where we should remain.
-  - cd ..
+  #- cd ..
 
   # Start by doing system installation.
   # - $HOME/travis-ci.sh system-install

@@ -1,14 +1,52 @@
 language: php
 
 php:
-  - 5.4
+  - 5.3
 
-matrix:
-  fast_finish: true 
+
+env:
+  global:
+    # Your Pantheon site's UUID (e.g. from your dashboard URL)
+    - PUUID='aaaaaaaa-0000-bbbb-1111-cccccccccccc'
+
+    # Your Pantheon site's name.
+    - PNAME='site-name'
+
+    # The Pantheon environment name from which Multidev DB/files will be pulled.
+    # Probably one of: dev, test, live.
+    - PSOURCE='dev'
+
+    #
+    # PEMAIL environment variable: represents the Pantheon account e-mail with
+    # access to this site. Used to authenticate to Pantheon via Terminus. You
+    # must cd to your project root and run:
+    #
+    # travis encrypt PEMAIL='test@example.com' --add env.global
+    #
+    # Which will eventually look something like the key below.
+    # See: http://docs.travis-ci.com/user/build-configuration/#Secure-environment-variables
+    #
+    - secure: "encrypted_email_value_here"
+
+    #
+    # PPASS environment variable: represents the Pantheon account password for
+    # the above encrypted e-mail address. Run:
+    # 
+    # travis encrypt PPASS='my_account_password' --add env.global
+    #
+    - secure: "encrypted_password_value_here"
+
+    # Generate a random branch / multidev name, prefixed with "ci" followed
+    # by the Travis build number. Note, due to Pantheon multidev environment
+    # name limits, builds will start failing at #100000.
+    - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
+    - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
+
+    # You can use $PHOST as a reference to the resulting multidev hostname.
+    - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 
 install:
   # Make some variables available to the travis-ci.sh script.
-  - export UPDATE TRAVIS_BUILD_DIR
 
   # Copy the script into a stable location.
   # - cp scripts/travis-ci.sh $HOME/

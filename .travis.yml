@@ -32,7 +32,7 @@ before_script:
 
 script:
   # - $HOME/travis-ci.sh run-tests
-
+    - build.sh
 after_script:
   # - $HOME/travis-ci.sh after-tests
 

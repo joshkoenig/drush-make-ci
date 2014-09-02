@@ -63,7 +63,7 @@ before_script:
 script:
     - git status
     - pwd
-    - ./scripts/build_script.sh
+    - scripts/build_script.sh
   
 after_script:
   # - $HOME/travis-ci.sh after-tests

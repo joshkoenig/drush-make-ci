@@ -1,0 +1,39 @@
+language: php
+
+php:
+  - 5.4
+
+matrix:
+  fast_finish: true 
+
+install:
+  # Make some variables available to the travis-ci.sh script.
+  - export UPDATE TRAVIS_BUILD_DIR
+
+  # Copy the script into a stable location.
+  # - cp scripts/travis-ci.sh $HOME/
+
+  # Move to the directory above, where we should remain.
+  #- cd ..
+
+  # Start by doing system installation.
+  # - $HOME/travis-ci.sh system-install
+
+before_script:
+  # - $HOME/travis-ci.sh before-tests
+
+script:
+  # - $HOME/travis-ci.sh run-tests
+  - git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
+  - cd $HOME/.drush/terminus
+  - composer update --no-dev 
+  
+after_script:
+  # - $HOME/travis-ci.sh after-tests
+
+notifications:
+  email:
+    recipients:
+      # - panopoly-ci@googlegroups.com
+    on_success: always
+    on_failure: always

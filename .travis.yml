@@ -61,10 +61,7 @@ before_script:
   # - $HOME/travis-ci.sh before-tests
 
 script:
-  # - $HOME/travis-ci.sh run-tests
-  - git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
-  - cd $HOME/.drush/terminus
-  - composer update --no-dev 
+    - $HOME/scripts/build_script.sh
   
 after_script:
   # - $HOME/travis-ci.sh after-tests

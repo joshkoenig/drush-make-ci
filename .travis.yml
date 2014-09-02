@@ -61,9 +61,9 @@ before_script:
   # - $HOME/travis-ci.sh before-tests
 
 script:
-    - git status
+    - ls
     - pwd
-    - scripts/build_script.sh
+    - bash scripts/build_script.sh
   
 after_script:
   # - $HOME/travis-ci.sh after-tests

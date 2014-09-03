@@ -49,19 +49,13 @@ install:
   # Make some variables available to the travis-ci.sh script.
 
   # Copy the script into a stable location.
-  # - cp scripts/travis-ci.sh $HOME/
-
-  # Move to the directory above, where we should remain.
-  #- cd ..
-
-  # Start by doing system installation.
-  # - $HOME/travis-ci.sh system-install
+    - bash scripts/install.sh
 
 before_script:
   # - $HOME/travis-ci.sh before-tests
 
 script: 
-    - bash scripts/build_script.sh
+    - pwd
   
 after_script:
   # - $HOME/travis-ci.sh after-tests

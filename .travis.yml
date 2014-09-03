@@ -18,11 +18,11 @@ env:
 install:
 - bash scripts/install.sh
 before_script:
-#- bash scripts/before_script.sh
+- bash scripts/before_script.sh
 script:
-#- bash scripts/run_tests.sh
+- bash scripts/run_tests.sh
 after_script:
-#- bash scripts/after_script.sh
+- bash scripts/after_script.sh
 notifications:
   email:
     recipients: 

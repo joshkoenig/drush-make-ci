@@ -16,7 +16,10 @@ env:
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+  - echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 install:
   # Dynamic hosts through Pantheon mean constantly checking interactively

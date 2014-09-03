@@ -1,8 +1,10 @@
 #!/bin/bash
 
-## Clone terminus
-git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
-## Change to the terminus directory
-cd $HOME/.drush/terminus
-# Run composer in case there are any updates
-composer update --no-dev 
+#
+# This is where you run your tests, be they SimpleTest, Casper, Behat,
+# or otherwise. Here's a SimpleTest example. I've found that drush
+# likes to exit with odd codes if you run multiple classes at once.
+# You may have to run one class at a time.
+#
+# drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
+# drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0

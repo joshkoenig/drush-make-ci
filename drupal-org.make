@@ -51,9 +51,3 @@ projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = "contrib"
-
-; +++++ TODO modules without versions +++++
-
-projects[queues][version] = "" ; TODO add version
-projects[queues][subdir] = "contrib"
-

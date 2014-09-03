@@ -1,7 +1,4 @@
 #!/bin/bash
-echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
-base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa 
 
 # Dynamic hosts through Pantheon mean constantly checking interactively
 # that we mean to connect to an unknown host. We ignore those here.

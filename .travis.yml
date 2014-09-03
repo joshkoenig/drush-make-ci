@@ -45,10 +45,10 @@ install:
 - drush cc drush
 before_script:
 # To reconstitute the private SSH key from within the Travis-CI build (typically from 'before_script')
-echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
-base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - drush pauth $PEMAIL --password=$PPASS
 - cd $TRAVIS_BUILD_DIR
 - git checkout -b $PSITE

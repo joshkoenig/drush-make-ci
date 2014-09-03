@@ -7,10 +7,10 @@ php:
 env:
   global:
     # Your Pantheon site's UUID (e.g. from your dashboard URL)
-    - PUUID='aaaaaaaa-0000-bbbb-1111-cccccccccccc'
+    - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
 
     # Your Pantheon site's name.
-    - PNAME='site-name'
+    - PNAME='10stepstest'
 
     # The Pantheon environment name from which Multidev DB/files will be pulled.
     # Probably one of: dev, test, live.

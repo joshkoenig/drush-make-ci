@@ -71,6 +71,8 @@ before_script:
   - git config --global user.name "Pantheon Training"
   - git add /$TRAVIS_BUILD_DIR
   - git commit -m "Initial build"
+  # Ensure the target is in git mode
+  - drush psite-cmode $PUUID dev git
   - git push --force pantheon $PSITE
  
   # Create a new Pantheon environment using the above branch.

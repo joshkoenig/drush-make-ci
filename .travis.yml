@@ -53,7 +53,7 @@ install:
 
 before_script:
   # - $HOME/travis-ci.sh before-tests
-    - bash scripts/before_script.sh 
+  #  - bash scripts/before_script.sh 
 
 script: 
   # - bash scripts/run_tests.sh

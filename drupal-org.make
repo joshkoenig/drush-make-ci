@@ -2,6 +2,12 @@
 core = "7.x"
 api = "2"
 
+; Drupal
+projects[drupal][type] = core
+projects[drupal][download][type] = git
+projects[drupal][download][url] = git://github.com/pantheon-systems/drops-7.git
+projects[drupal][download][branch] = master
+
 ; +++++ Modules +++++
 
 projects[admin_menu][version] = "3.0-rc4"

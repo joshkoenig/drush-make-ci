@@ -43,12 +43,6 @@ projects[elements][subdir] = "contrib"
 projects[entity][version] = "1.5"
 projects[entity][subdir] = "contrib"
 
-projects[pantheon_api][version] = "1.0"
-projects[pantheon_api][subdir] = "contrib"
-
-projects[pantheon_login][version] = "1.0"
-projects[pantheon_login][subdir] = "contrib"
-
 projects[ckeditor][version] = "1.15"
 projects[ckeditor][subdir] = "contrib"
 

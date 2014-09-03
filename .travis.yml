@@ -49,7 +49,7 @@ install:
   # Make some variables available to the travis-ci.sh script.
 
   # Copy the script into a stable location.
-    - bash scripts/isntall.sh
+    - bash scripts/install.sh
 
 before_script:
   # - $HOME/travis-ci.sh before-tests

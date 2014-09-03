@@ -49,30 +49,30 @@ before_script:
   - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- drush pauth $PEMAIL --password=$PPASS
-- cd $TRAVIS_BUILD_DIR
-- git checkout -b $PSITE
-- drush make drupal-org.make -y
-- git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
-- git config --global user.email "training@getpantheon.com"
-- git config --global user.name "Pantheon Training"
-- git add /$TRAVIS_BUILD_DIR
-- git commit -m "Initial build"
-- git push --force pantheon $PSITE
-- drush psite-ecreate $PUUID $PSITE --source=$PSOURCE || true
-- drush paliases
-- drush cc drush
-- cd $HOME
-- drush @pantheon.$PNAME.$PSITE cc all --strict=0 || true
-- drush @pantheon.$PNAME.$PSITE updb -y --strict=0
-- drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
-- drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
+  - drush pauth $PEMAIL --password=$PPASS
+  - cd $TRAVIS_BUILD_DIR
+  - git checkout -b $PSITE
+  - drush make drupal-org.make -y
+  - git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
+  - git config --global user.email "training@getpantheon.com"
+  - git config --global user.name "Pantheon Training"
+  - git add /$TRAVIS_BUILD_DIR
+  - git commit -m "Initial build"
+  - git push --force pantheon $PSITE
+  - drush psite-ecreate $PUUID $PSITE --source=$PSOURCE || true
+  - drush paliases
+  - drush cc drush
+  - cd $HOME
+  - drush @pantheon.$PNAME.$PSITE cc all --strict=0 || true
+  - drush @pantheon.$PNAME.$PSITE updb -y --strict=0
+  - drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
+  - drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
 script:
-- drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
-- drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0
+  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
+  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0
 after_script:
-- drush psite-edelete $PUUID $PSITE -y
-- cd $TRAVIS_BUILD_DIR; git push pantheon :$PSITE
+  - drush psite-edelete $PUUID $PSITE -y
+  - cd $TRAVIS_BUILD_DIR; git push pantheon :$PSITE
 notifications:
   email:
     recipients:

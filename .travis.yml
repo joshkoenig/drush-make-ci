@@ -13,8 +13,10 @@ env:
   - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
   - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
--before_install:
-- openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+
 install:
   # Dynamic hosts through Pantheon mean constantly checking interactively
   # that we mean to connect to an unknown host. We ignore those here.

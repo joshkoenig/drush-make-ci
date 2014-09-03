@@ -1,7 +1,7 @@
 language: php
 php:
 - 5.3
-source_key: INSERT_KEY_HERE
+# source_key: INSERT_KEY_HERE
 env:
   global:
   - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'

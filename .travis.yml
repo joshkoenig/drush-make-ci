@@ -3,6 +3,20 @@ language: php
 php:
   - 5.3
 
+#
+# Travis/Pantheon integration requires an RSA key that at least has read access
+# to your GitHub repo and write access to Pantheon's git repo. Create a user on
+# both systems with the most restricted access, given the aforementioned
+# constraints. Then, for the given user, generate and load a public key to both
+# GitHub/Pantheon. Follow instructions from Travis-CI on using this new key.
+#
+# Keep the Pantheon account e-mail address and password handy, you'll need it
+# below in env.global.
+#
+# http://docs.travis-ci.com/user/travis-pro/
+# https://help.github.com/articles/generating-ssh-keys
+#
+source_key: INSERT_KEY_HERE
 
 env:
   global:
@@ -54,15 +68,13 @@ install:
 
 before_script:
   # - $HOME/travis-ci.sh before-tests
-  # - bash scripts/before_script.sh 
+    - bash scripts/before_script.sh 
 
 script: 
-  # - bash scripts/run_tests.sh
-    - pwd
+    - bash scripts/run_tests.sh 
   
-after_script:
-  # - $HOME/travis-ci.sh after-tests
-  # - bash scripts/after_script.sh
+after_script: 
+   - bash scripts/after_script.sh
 
 notifications:
   email:

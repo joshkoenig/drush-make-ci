@@ -53,12 +53,15 @@ install:
 
 before_script:
   # - $HOME/travis-ci.sh before-tests
+  # - bash scripts/before_script.sh 
 
 script: 
+  # - bash scripts/run_tests.sh
     - pwd
   
 after_script:
   # - $HOME/travis-ci.sh after-tests
+  # - bash scripts/after_script.sh
 
 notifications:
   email:

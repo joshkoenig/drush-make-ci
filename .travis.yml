@@ -16,7 +16,29 @@ env:
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+  - secure: "FJnKApQTXi4ZmbRe5aiB5umOOmCGi5EJpT4f49zC13dQa4/0XcLafQwb/+mhMp5e7hBXFedKkXkzG758dlYh3dWiFdBmJdoD4oQEVd+MNcMn8aLmb7vyPrEsH6DXPrrwOXunLCBRiMQHwPT8hCTTewpLCawFX5B157t0uNcCPg0="
+  - secure: "D/vtljoTqcKHmkKFRUuF5dcksmRTl+wkNlNDPASSrzrpsVmYv4ZstX4S0txqtPp2Ul1Xq9v5uX2hDL+0DpMBACNTjnoe2Gh3NbFj6YB+SBke6OyTmjMOAC3WalFRXzQU5Jlz8DoJfPxwEG5aOq9Qi0PrISCyiI9AC3PxrJDtYN4="
+  - secure: "DnMnnhaEgxRXw5HsyOc3FbkSUtaJOGchG/WqL1wspae6xy6EoOGC9cvXG+2u82bP9A5FjEypD4SiUVGqo7+8m9WceWJaCPD7Zu0IQrF/AiJT3o2qZVPPSyjzXMbpiQQOIoNRYmkxL+m6RXj+9hTr9kvp1MdRTL4s/UBI3Ho7/wA="
+  - secure: "UtvRA4Z4WWj64ZHOcXbEEwCAnT9z/MqJtrXhf5OtQYUTS+g06JRjAOpztk0sCr0eKWwHaWRLyyIUXdzZhEdGWMVfeSGjCa1a4khMqSjzvBZx1DzfMAP5xqF4G8n6LuJntqHa+Ty2rAjaJ9fq/mtM738J1WSR+CEiz5qiguZsSpc="
+  - secure: "NkSMxb/CWI4wK8C2KBnuZfMFTlvfKyfF18XBbW0iVAOp3ykHB3NHvV13hANfR+mThG8r0rkX4fpvN+48hL96P7bEF62a2L3/JgUotfxSdUpFDtqmJ7xOkbx4hwkmTVWFxyUzeUDMH0wmuD/Fb1+DJsuebyiwOPbst41CkR6nwWs="
+  - secure: "dgS2qOBvsG8JKSuDUG2FFfO//1RAXYNIlWg4umMXIr2CMbFJELPkYwmPqTV7lbsQLJ01CTRaGhNpXQAFB93ox+5h/Cqi7EIqMog47ZyaLlWx4NItRjFJpkFvWd3l/oAXh6wYS/QT7zonx+i/HrCL1TWjLWPnVLv9NZK6mxMg6U4="
+  - secure: "IqPU+Ll0o0T20pwgMlhfTi24+Fm5hGWZ4m/8/I4YqCcwmyplNkG+l1C72buUXnqT7u2yTLgADP/qFcWaq3GjzFLo3/lBun191llTxwYxzu/lURlwiVb0+zzb3ZBkh1Kfrt3Ut/VAqvYdGlOc9gWI+hjbiXUozNY4rWdmiaQui60="
+  - secure: "FzwlMIM/ieO1SEaPRb2O1N3ToyKWeY2eoVp0u0RwLwtUdnKPx6UdH4QMS9t3ddXjjfs3QYy5EDE9kyp5ENMNEzuepmeFUKjFUBTPpN+Xig/pTzADX67CPwpMDdpdopJqWsQN9XvpCxU8zt20X1WggmINom4HbFjnvV2KJIWkbKA="
+  - secure: "APE+hrQBJGHStCTici9rGUOlwYkEBDZJfARdq9bvcC9MWtOYZAX0AphN+hchjS4iqfEVQ/BjeqcP1fHluuMPbs9dsWIoxvh+TLjH0UNm82H9YPt1zNKdawCIga8OLpJSwbjV33rCt7wMH5gPX9oMiGoIb2fxyTchAUo/l5RjD9E="
+  - secure: "AVmC8BNFJUPNZosz8inpDPpUfT7cn10zZIqgOggkj5yHph36Kmv0N4sIk1yaFQvHMHteemH2haF083N5Xx3AqDH2tzmTNuwg36mAS+jlvi6JX73ACuYhsiLwnW+YlP6rLh97Ru1wHVe6SaWiy4pG4goaicUKmtNFkcappp091ic="
+  - secure: "cDkaqPavH5dvt4Wo5vInAj9RNmzOoxmhq67WMC7WWog6Ds0ICy3vMT0rJKOh/AYujWCGAqOGIdK3EAh7Ny33c5GN9x2trLCGtv2Vnoo7n4H9pj3MIyitAVWX0tRXyY+jZpNqc7LDRGLBDTggqxvpR7AL+H5VxV3aJA7AYGl3dzc="
+  - secure: "QuqIfCJ6LxBX3cAMYv6xAoaxUeMJHnaVnEu7D39CFounusCLriEA1Bj5Afb0Mxdkej1Faub08snoEIgjCyiL5UXbKG8A3TpodiNpzHrWe2jMvCiklidOTqH4xojeYjaRhIZJ58bAyd4zk87h3BIDZ8XthMHySs5bkp3nCc4HIfk="
+  - secure: "QyUrcGfHpgF4Sg/6jQzYFXQGVmH3pscxm41j30lBCW5WM9IHzzy4R/2m//IviWlBCNqGlvXPfp9vOZSZkhuZnAZdMZft/dRNtHHSssoNiXxjPxHEBSJhGNgBlZdljn039jPaKJEmk58X13zCSuJNod5zgeDVdrHJoD6NLB7juDg="
+  - secure: "IdTVUMXlmCNs1lkhvwzjGcFpc+1/1q+NmrdKIeoXwmReSLiHhQx3aD6P8bpyRI9rx6jwg+/E4S1iLTPKIvH6nd8pLGv95w8EDaOsdJKNgaXaIL0jIQeyWNO+aEDnjakGKYitspXUAoSJM/B8ky/Jl82fwmyA37SZntx2ud9Xqaw="
+  - secure: "J/SErJGs9UUQhl9xokRIGTzLnNEwT0K+v4hgNk2FcXLMHO1XMiGNNKaLQwsvaLxxPr1MiylVb3Jcl7jHeBgwa+ooUgkqTbMBOFXi6JbPtJt8aeWIV8sePTjCpkaVJZaH2eMQ86LtAKa/jJOiG62OT+97JLkLvqw1EPRQbd2nMCY="
+  - secure: "aP8+wB6Aytchp5ygmzMH3vPlfq3hfkV4ne07fxqlhpj4fmBXB/DrKqayjctOweCNs0VtWRWCOD7W8R49WZuDO0Z6S+3LYG8yyMqoeBBAjIty2tT0EGrWBPVEuohp8whk6ytr8dUOUSYEbyGSUKf0LZpYvKe1LszeRpfZWxMlCag="
+  - secure: "R6d7fcafLKG/4nqz0MiSZLA+aEBDjwcS340qEsy6bIWDfXMlZroCBDm8Wy3K9jWwArmHiVpxCw6b6LE5OLhniNGGp9Dc+RSG1Rd6yAap6inORoZuxujT//X/5nsYZ7vOWD926QfK3NWPL7Whfh5PrbAy7rqsxDl5RyRdzYYgxSI="
+  - secure: "Ty4wJEEI1j0M0oMb8hSL4X/LL4n8t1ewSxT0Fan8jCeOghdNgEiir3/B/+6HaPuZ5OBz42hp2li4w2HU2z8xDCc34Fy46XIFaOQvW2kNKIIjmZa39pgqxFIR5KDAGxiXLIBje6MYrUjf38QYRXm8rFW4kTJBCPhx6Z/b0Z9Y1OM="
+  - secure: "P3JZdVs3ixRnUsvkpMbo9F0o8Nc1pWBLDITbzwhPLJ/rX8CXHA2/4BmE+MWxt6AZ/qVEcwoTRGtN9Jxmyl0UGB9CAFoum/Z7EUxdEGcnVT5uLCQKnKGpfIcwhARPU2buExt/x+AJwoqC00/PjbabFci5f+AlVBlSBwQns53gnSQ="
+  - secure: "K4F78Cw5IEb0bDKtOyqZ/l9Tp527BD7PyeRmls+tQ5vaQLs/LHQLxp6rNsfElZ2FGrH/ADNUUKqwaLH9BUZojEgfvPU9ZNK0JF3zZqBxbgpm3Rituf7lPgmr/6nprUKuSk+jT/R7DRw32MAxo0aYU+NDcrSDYuP8e3nDVWDC/CA="
+  - secure: "F9UAQBx/nZYw+4pG8TBCAV8m+nF5ZCcI9bSo1olJkiYJlThIa2sYrWejplkc6N/D+Z0sv0clBjCePr2GVME9zHoZ0soYTTrhSF6hH2KutJF2eXJLq0SHnDJd7QknItVroEOU0YwJw415232RH+b4EmAjS8G57NZeI1sm3a2PSxM="
+  - secure: "RUWQrjUcmblGru/KL2Mh4vtg+55PP21dyauCYuSlEHdfc/VXhkO468JRJeRe9r9MdOqSzKax8M537PaBMdQikDzAZ8FN4MBsC1ydTZJM+kjM+JDwMBc+laVkyVdcnwc6TQvR/IChdeeijZf1ZT44zXNJ41XfH1cpI9Uqt3S1hCw="
+  - secure: "E/XE7GetwwKf2R2l1fnSxqnITc0e9CU0iBHltzXyhqEpb9dxFloctXABMo6Je+UZh+xtx/eN+byu7dzbVQQq4179HZvXXNZbJeoi7Kql4l7BhYLYDT5BuoUMtYmZ4iQFJpmrYSbP3yQ1kX3XwDJ/Z2mVr4aFqUvuYRfncNZhMU8="
 
 install:
   # Dynamic hosts through Pantheon mean constantly checking interactively
@@ -37,6 +59,10 @@ install:
   # Install additional test dependencies here (like Casper, Behat, etc).
  
 before_script:
+  - echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   # Authenticate with Pantheon via Terminus.
   - drush pauth $PEMAIL --password=$PPASS
  

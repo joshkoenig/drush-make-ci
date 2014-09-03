@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# We cannot be in a Drupal directory to run aliased drush commands.
+cd $HOME
+
 # Authenticate with Pantheon via Terminus.
 drush pauth $PEMAIL --password=$PPASS
 

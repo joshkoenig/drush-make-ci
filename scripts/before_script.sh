@@ -4,6 +4,7 @@
 cd $HOME
 
 # Authenticate with Pantheon via Terminus.
+drush cc drush 
 drush pantheon-auth $PEMAIL --password=$PPASS
 
 # Add Pantheon as a remote to our repo and force push to it.

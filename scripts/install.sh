@@ -11,7 +11,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 # Install Terminus.
 git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
 cd $HOME/.drush/terminus
-composer update --no-dev -v
-drush cc drush -v 
+composer update --no-dev
+drush cc drush 
  
 # Install additional test dependencies here (like Casper, Behat, etc).

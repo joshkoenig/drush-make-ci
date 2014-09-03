@@ -65,17 +65,16 @@ before_script:
   - drush pauth $PEMAIL --password=$PPASS
 
   # Build the Upstream repo for testing with drush make
-  - mkdir ~/$UPSTREAM_BUILD_DIR
+  - cd $TRAVIS_BUILD_DIR
+  - drush make $DISTRO.make ~/$UPSTREAM_BUILD_DIR -y
   - cd ~/$UPSTREAM_BUILD_DIR
   - git config --global user.email "training@getpantheon.com"
   - git config --global user.name "Pantheon Training"
   - git init
-  - cd $TRAVIS_BUILD_DIR
-  - drush make $DISTRO.make ~/$UPSTREAM_BUILD_DIR -y
   # Add Pantheon as a remote to our repo and force push to it.
   - git checkout -b $PSITE
   - git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
-  - git add /$UPSTREAM_BUILD_DIR
+  - git add ~/$UPSTREAM_BUILD_DIR
   - git commit -m "Initial build"
   # Ensure the target is in git mode
   - drush psite-cmode $PUUID dev git

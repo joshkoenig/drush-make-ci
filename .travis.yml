@@ -12,8 +12,6 @@ env:
   - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
   - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
-
-before_install:
   - secure: "FJnKApQTXi4ZmbRe5aiB5umOOmCGi5EJpT4f49zC13dQa4/0XcLafQwb/+mhMp5e7hBXFedKkXkzG758dlYh3dWiFdBmJdoD4oQEVd+MNcMn8aLmb7vyPrEsH6DXPrrwOXunLCBRiMQHwPT8hCTTewpLCawFX5B157t0uNcCPg0="
   - secure: "D/vtljoTqcKHmkKFRUuF5dcksmRTl+wkNlNDPASSrzrpsVmYv4ZstX4S0txqtPp2Ul1Xq9v5uX2hDL+0DpMBACNTjnoe2Gh3NbFj6YB+SBke6OyTmjMOAC3WalFRXzQU5Jlz8DoJfPxwEG5aOq9Qi0PrISCyiI9AC3PxrJDtYN4="
   - secure: "DnMnnhaEgxRXw5HsyOc3FbkSUtaJOGchG/WqL1wspae6xy6EoOGC9cvXG+2u82bP9A5FjEypD4SiUVGqo7+8m9WceWJaCPD7Zu0IQrF/AiJT3o2qZVPPSyjzXMbpiQQOIoNRYmkxL+m6RXj+9hTr9kvp1MdRTL4s/UBI3Ho7/wA="

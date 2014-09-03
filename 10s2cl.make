@@ -16,7 +16,7 @@ projects[admin_menu][subdir] = "contrib"
 projects[configuration][version] = 2.x-dev
 projects[configuration][download][revision] = c092a4dab101e32cfed18666ab12b2964bde576c
 projects[configuration][download][branch] = 7.x-2.x
-projects[configuration][download][url] = http://ftp.drupal.org/files/projects/configuration-7.x-2.x-dev.tar.gz
+projects[configuration][download][url] = http://git.drupal.org/project/configuration.git
 projects[configuration][subdir] = "contrib"
 
 projects[module_filter][version] = "2.0-alpha2"

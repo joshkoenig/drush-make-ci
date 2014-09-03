@@ -78,6 +78,7 @@ before_script:
   - git commit -m "Initial build"
   # Ensure the target is in git mode
   - drush psite-cmode $PUUID dev git
+  - git fsck --full
   - git push --force pantheon $PSITE
 
   # Create a new Pantheon environment using the above branch.

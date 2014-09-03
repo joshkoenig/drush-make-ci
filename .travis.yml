@@ -42,9 +42,9 @@ before_script:
   - git checkout -b $PSITE
   - drush make drupal-org.make -y 
   - git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
-  -  git config --global user.email "training@getpantheon.com"
+  - git config --global user.email "training@getpantheon.com"
   - git config --global user.name "Pantheon Training"
-  - git add .
+  - git add /$TRAVIS_BUILD_DIR
   - git commit -m "Initial build"
   - git push --force pantheon $PSITE
  

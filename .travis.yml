@@ -2,8 +2,8 @@ language: php
 php:
 - 5.3
 #source_key: SnM3UUt4dGZ0Q1ZuKzBQQmVXOC9ibzFnZElmQ0FvL2NFK0ZuMytnYm50V3V2SlR1cnVCVWtTRmE2dGtHUjFsNQ0KRG4zWlhwdjR0bDEyMDJpc0YzMUE0S25XdGpDelpyZXhmWG5oZzd3d29oU3ZMYVU5bUFIVmFaMGJlcEdGbmxXUA0KdnoyQm5pd3IxQkhMTHVyOUZucmNoVXNadVo3SXRnelc3ODkwMjJVQjQ0T2MrQWoyNlNscVlvZnlnZ1NpbVhCVw0KcUFkNWZmTEVSSE16a1Q4aFdQcDFzRER4enY0TGg1dUhDcVVKczcwdDRuVm4xRGVDTExubHZFSGVTVzRPaE0zVA0KVXJlM3lsTnRvSTRHK1Q1YU9rcnhUVE53RGlBVHBUTGJiZEcwVWsrQTlXNXUxNEowOUZ1L1NFc2haZ29EZWhFSg0KWXZkc3RaTlNqUFBjUGsrYjJtRE1Hb3BCSUdyY0x6WGNGeUU4OGhrZTRjTlpaUHlJM1p1NzcxWmJYc3I3OTBtMQ0KbDYrcm42cnA4Yk43NXZLSkxENGowQzNSQlU5eEEyUVBmZ0taeXpxQjkweWdRK0hVRXlGdGdMNUxQVkYzWHc3OA0KSzVOeWNFTyt6cURnT3FWN3JqWW5oOTBWazRtQk41MnpjUkVCWUNtRzJqUEtDSkJsdXhxT0xlUFFTMzVxRHZJYw0KTDlLZ2RqTkhSd3hGeUhpdlNsdTZDd25yRnVHbnNydmhDTkh6R3I1OVd6dFF0QWIrbkZkb0ZINW1DRGlrcmR4Mw0KYmNoQnkzY2ZVSkRCYUNJR3M1R1dCZmlSa2xEUHA4T2lpNWFxSUcvOFI4VC9qSG1TK3F5UmVEZFh2WUtDQ3RUMg0KQXNUdk5JZTRCZXdscE1hQWFxWDdwRVBKM0Q4V3NNVktFTXRQNWFNQjhPazVJOFkyejJIMkI3WHBlOWRtYW1zQQ0KcnYrYzljaUpKb3VUM09VNTFSNGJza0tvNUc0dnNEalBzM1ZYZHI0VmJvaDdmVGpIS29SNmpGOHFNc281Q1lDbg0KWS9EYWZ6SjZNVXdwZHFBS2JlSllLSzJLYkw3YjJIViswVGhDT0dwczNhbzA0TU5Va2UvdFVSREZkaDhtZHByZA0KazdWMHlmaXBiQ3dvcWdYMThVVkpNeW51MUNCMU1sOXB1TzFoR3lnekNac0dsV2Z3ZlZ5d2czNi9GRktBWkx5OQ0KYldZcGtFeGhrb1BjcUxXQkk1eG0ycUJvZHk5Y0JOSjdST1ZpQnU0dzdOV2tzK3FqNkh6aGZlRUVpb0FqQ2hhMw0KNVE2Yk1VblJBM1l4RXp1Q2VZN0RCRXg2dzdZZE04Z2M5WFVnVTJIU2JtWTVZanA4eHQ4QzUreEpoRCt4QWxiTQ0KZ0xBUElhR1g1UlVCOWpVVnJiZ1dsKzZVdjduZkJQakVFTWIxTTJoR0JDcWlwNG1tMHp2NjIxYjFBR3I3ek56dg0KT0dhNHBNcW5PWjQ1a2hWS3FzQXNPY3MySFl2YUNweTMyN0lZZDJKN3hHQm43VDdBYy9CdXlOb3BnN1lRRlNQVg0KUEtkakk4YitiN1BPWDFkaGZJak1lZzU1R3VhajJqK094M3VqOW9nQVZFeFBlVmJlazhPVm5JL0pIR2tDR2svVA0KL2JaMUUya1FDM0ZrZXcybGhvZlpMZHdCTW5VZ3dnN2tHZU02ZTQ0VWh0STIrUzFNcncyZXBrVDduRDB6c3lJZQ0KZWx6eDI3VUszN3ZQTGZSQUVXQzdGRmRiVVRiMDFVZ3FkTm9pd0ZRdVh1ak1UM3B3VzJ3TXlrTFoydkJDRzFMTw0KZ0V6YUgvUTF0VFpkWVRkaEpaYm54cjZRZ0FleDdCbWFlaENCazZpSytmWFJNUFhrQ3poMHlTUE5aazJLbGNMeQ0KdytYc25NU2JVc25XY1E4OVV5WGZ3Q2VuM0ZnL3hoTW1xeWVjUGV4eTF6Mk5xeklaZlE3VGJybmoyL2czVTRzWg0KTndWWThuZzBtTEJZQmJQZlJjR21tUXcwb0FOWStOVUhtU0lieHJaOFkyY1I0dms3cXR1UWdaOVlVZE1zRUhRWA0KMjA5YXJRa1oxMDBab053ejgrTHdWbWVBb2toNG9LNU4yVEhmaXYwc2dVNTZ3eUNqWjhwZUdRT3FacUlsVGpWdw==
-
-
+ 
+ 
 env:
   global:
   - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
@@ -14,8 +14,10 @@ env:
   - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
   - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
--before_install:
-- openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv -in training_rsa.enc -out ~/.ssh/training_rsa -d
+
 install:
   # Dynamic hosts through Pantheon mean constantly checking interactively
   # that we mean to connect to an unknown host. We ignore those here.
@@ -41,7 +43,12 @@ before_script:
   # Add Pantheon as a remote to our repo and force push to it.
   - cd $TRAVIS_BUILD_DIR
   - git checkout -b $PSITE
+  - drush make drupal-org.make -y 
   - git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
+  - git config --global user.email "training@getpantheon.com"
+  - git config --global user.name "Pantheon Training"
+  - git add /$TRAVIS_BUILD_DIR
+  - git commit -m "Initial build"
   - git push --force pantheon $PSITE
  
   # Create a new Pantheon environment using the above branch.

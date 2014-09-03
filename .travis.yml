@@ -8,8 +8,8 @@ env:
   - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
   - PNAME='10stepstest'
   - PSOURCE='dev'
-  - secure: E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc=
-  - secure: U+wHmgqjuk14i0OLMPd+fH2XJ0o1F4PmAtDwT4ylVd8Onz3E4IFCI35W8EqgrUaAT83vNz8hm/+N83y8ktusXIHX2Zl5ow8J5/XG/Ireokc7sfgPSsnpHOZ+N6/gbjed80/RSMZQ596dy2bE6eZsrdFFJd/LRTYaJ4zpAmhJkVw=
+  - secure: "E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc="
+  - secure: "B36n51LDAYS/aPukaz9nnQAiOQLKb95aLNYqBrY7HGGSHnUgDa7098ZNCTqp/M0SDSeFLblfU44gi2hMpw8gfKPzhVvfn5iJocT5laXkWIB9MUJhTngCbponu1zC0UJqAgiIxfVpOSLrESHNJxbJxIzkSqDudijT8syLuEgPEeg=" 
   - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
   - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"

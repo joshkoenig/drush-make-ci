@@ -1,84 +1,30 @@
 language: php
-
 php:
-  - 5.3
-
-#
-# Travis/Pantheon integration requires an RSA key that at least has read access
-# to your GitHub repo and write access to Pantheon's git repo. Create a user on
-# both systems with the most restricted access, given the aforementioned
-# constraints. Then, for the given user, generate and load a public key to both
-# GitHub/Pantheon. Follow instructions from Travis-CI on using this new key.
-#
-# Keep the Pantheon account e-mail address and password handy, you'll need it
-# below in env.global.
-#
-# http://docs.travis-ci.com/user/travis-pro/
-# https://help.github.com/articles/generating-ssh-keys
-#
+- 5.3
 source_key: INSERT_KEY_HERE
-
 env:
   global:
-    # Your Pantheon site's UUID (e.g. from your dashboard URL)
-    - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
-
-    # Your Pantheon site's name.
-    - PNAME='10stepstest'
-
-    # The Pantheon environment name from which Multidev DB/files will be pulled.
-    # Probably one of: dev, test, live.
-    - PSOURCE='dev'
-
-    #
-    # PEMAIL environment variable: represents the Pantheon account e-mail with
-    # access to this site. Used to authenticate to Pantheon via Terminus. You
-    # must cd to your project root and run:
-    #
-    # travis encrypt PEMAIL='test@example.com' --add env.global
-    #
-    # Which will eventually look something like the key below.
-    # See: http://docs.travis-ci.com/user/build-configuration/#Secure-environment-variables
-    #
-    - secure: "E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc="
-
-    #
-    # PPASS environment variable: represents the Pantheon account password for
-    # the above encrypted e-mail address. Run:
-    # 
-    # travis encrypt PPASS='my_account_password' --add env.global
-    #
-    - secure: "U+wHmgqjuk14i0OLMPd+fH2XJ0o1F4PmAtDwT4ylVd8Onz3E4IFCI35W8EqgrUaAT83vNz8hm/+N83y8ktusXIHX2Zl5ow8J5/XG/Ireokc7sfgPSsnpHOZ+N6/gbjed80/RSMZQ596dy2bE6eZsrdFFJd/LRTYaJ4zpAmhJkVw="
-
-
-    # Generate a random branch / multidev name, prefixed with "ci" followed
-    # by the Travis build number. Note, due to Pantheon multidev environment
-    # name limits, builds will start failing at #100000.
-    - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
-    - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
-
-    # You can use $PHOST as a reference to the resulting multidev hostname.
-    - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
-
+  - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
+  - PNAME='10stepstest'
+  - PSOURCE='dev'
+  - secure: E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc=
+  - secure: U+wHmgqjuk14i0OLMPd+fH2XJ0o1F4PmAtDwT4ylVd8Onz3E4IFCI35W8EqgrUaAT83vNz8hm/+N83y8ktusXIHX2Zl5ow8J5/XG/Ireokc7sfgPSsnpHOZ+N6/gbjed80/RSMZQ596dy2bE6eZsrdFFJd/LRTYaJ4zpAmhJkVw=
+  - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
+  - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
+  - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 install:
-  # Make some variables available to the travis-ci.sh script.
-
-  # Copy the script into a stable location.
-    - bash scripts/install.sh
-
+- bash scripts/install.sh
 before_script:
-  # - $HOME/travis-ci.sh before-tests
-    - bash scripts/before_script.sh 
-
-script: 
-    - bash scripts/run_tests.sh 
-  
-after_script: 
-   - bash scripts/after_script.sh
-
+- bash scripts/before_script.sh
+script:
+- bash scripts/run_tests.sh
+after_script:
+- bash scripts/after_script.sh
 notifications:
   email:
-    recipients:
-      # - panopoly-ci@googlegroups.com
+    recipients: 
     on_success: always
     on_failure: always
+before_install:
+- openssl aes-256-cbc -K $encrypted_5aa7ab7b39b5_key -iv $encrypted_5aa7ab7b39b5_iv
+  -in training_rsa.enc -out ~\/training/training_rsa -d

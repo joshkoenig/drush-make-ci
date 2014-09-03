@@ -5,13 +5,13 @@
 echo "StrictHostKeyChecking no" > ~/.ssh/config
  
 # Install Drush.
-composer global require drush/drush:6.2.0
+composer global require drush/drush:6.2.0 -v
 export PATH="$HOME/.composer/vendor/bin:$PATH"
  
 # Install Terminus.
 git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
 cd $HOME/.drush/terminus
-composer update --no-dev
-drush cc drush
+composer update --no-dev -v
+drush cc drush -v 
  
 # Install additional test dependencies here (like Casper, Behat, etc).

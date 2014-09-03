@@ -13,7 +13,7 @@ projects[drupal][download][branch] = master
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = "contrib"
 
-projects[configuration][version] = dev
+projects[configuration][version] = 2.x-dev
 projects[configuration][download][revision] = c092a4dab101e32cfed18666ab12b2964bde576c
 projects[configuration][download][branch] = 7.x-2.x
 projects[configuration][download][url] = http://ftp.drupal.org/files/projects/configuration-7.x-2.x-dev.tar.gz

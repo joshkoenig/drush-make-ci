@@ -7,10 +7,10 @@ php:
 env:
   global:
     # Your Pantheon site's UUID (e.g. from your dashboard URL)
-    - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
+    - PUUID='7b67ea8d-0c67-41ec-9358-147b74181022'
 
     # Your Pantheon site's name.
-    - PNAME='10stepstest'
+    - PNAME='drush-make-example'
 
     # The Pantheon environment name from which Multidev DB/files will be pulled.
     # Probably one of: dev, test, live.
@@ -26,15 +26,15 @@ env:
     # Which will eventually look something like the key below.
     # See: http://docs.travis-ci.com/user/build-configuration/#Secure-environment-variables
     #
-    - secure: "E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc="
+    - secure: "IyugEqFFk0tqw1zQZTaYsTt88rq2EwQ+lz4S6DyXwRSLiAyWqxPfPF1J6lkzIOIaYoRCdXi3QBaHObJFQn0BQpJMMXvFZkwZ9mSTfAZbF2dnnVkO0gubGZr4jhVOpDnTS9JFNpmCCbkYzmxlRWJPQ6KhYUBGEiHo2aj5n8aXjWg="
 
     #
     # PPASS environment variable: represents the Pantheon account password for
     # the above encrypted e-mail address. Run:
-    # 
+    #
     # travis encrypt PPASS='my_account_password' --add env.global
     #
-    - secure: "U+wHmgqjuk14i0OLMPd+fH2XJ0o1F4PmAtDwT4ylVd8Onz3E4IFCI35W8EqgrUaAT83vNz8hm/+N83y8ktusXIHX2Zl5ow8J5/XG/Ireokc7sfgPSsnpHOZ+N6/gbjed80/RSMZQ596dy2bE6eZsrdFFJd/LRTYaJ4zpAmhJkVw="
+    - secure: "IKWSynH5dt6UqUDPd72RYXVy74k8DI6XvQ7MZyvKu3wUFne9VdyRwPvZr8FsxfN3aVOu1uvenQIEQh4eTCgccmbSUZZp5TWFR3B+Vq8JenXSI8BSbALMREd9ezZoondryJefbRpiGpbx5RK6oPDG8RtDEVqdUCUaBGaBglFIUzU="
 
 
     # Generate a random branch / multidev name, prefixed with "ci" followed
@@ -54,12 +54,12 @@ install:
 
 before_script:
   # - $HOME/travis-ci.sh before-tests
-  # - bash scripts/before_script.sh 
+  # - bash scripts/before_script.sh
 
-script: 
+script:
   # - bash scripts/run_tests.sh
     - pwd
-  
+
 after_script:
   # - $HOME/travis-ci.sh after-tests
   # - bash scripts/after_script.sh

@@ -7,11 +7,14 @@ env:
   - PUUID='ed64345a-aa95-4e9e-b919-1fe9e8537ce6'
   - PNAME='10stepstest'
   - PSOURCE='dev'
+  - PUUID2='8a5a7756-3049-4ac4-a6e6-6e926520933a'
+  - PNAME2='10steps'
   - secure: "E4Xtuee9bZ9iqFKPyTR3hA5dE/su7iz9sW1Qb2B6Al+Wh9EDoC9IJlF/g6MypVvduAKeSoIf9Judnnr1xt/E324OxYKCRFBAWpfFn8pnNchO2kFacwCX54q2ZnHxdg1Mhpcw1dUo61+7FvrKK6q9sg4LVZ+CzxuPi6p/3Ly/Fgc="
   - secure: "B36n51LDAYS/aPukaz9nnQAiOQLKb95aLNYqBrY7HGGSHnUgDa7098ZNCTqp/M0SDSeFLblfU44gi2hMpw8gfKPzhVvfn5iJocT5laXkWIB9MUJhTngCbponu1zC0UJqAgiIxfVpOSLrESHNJxbJxIzkSqDudijT8syLuEgPEeg="
   - PSITE=$(cat /dev/urandom | tr -cd 'a-z0-9' | head -c 4)
   - PSITE="ci$TRAVIS_BUILD_NUMBER-$PSITE"
   - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
+  - PHOST2="https://$PSITE-$PNAME2.gotpantheon.com"
   - DISTRO="10s2cl"
   - UPSTREAM_BUILD_DIR="$DISTRO-drops7"
   - secure: "FJnKApQTXi4ZmbRe5aiB5umOOmCGi5EJpT4f49zC13dQa4/0XcLafQwb/+mhMp5e7hBXFedKkXkzG758dlYh3dWiFdBmJdoD4oQEVd+MNcMn8aLmb7vyPrEsH6DXPrrwOXunLCBRiMQHwPT8hCTTewpLCawFX5B157t0uNcCPg0="
@@ -71,17 +74,21 @@ before_script:
   - git config --global user.email "training@getpantheon.com"
   - git config --global user.name "Pantheon Training"
   - git init
-  # Add Pantheon as a remote to our repo and force push to it.
+  # Add both Pantheonsites as remotes to our repo and force push to it.
   - git checkout -b $PSITE
-  - git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
+  - git remote add pantheon_install ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git
+  - git remote add pantheon_upgrade ssh://codeserver.dev.$PUUID2@codeserver.dev.$PUUID2.drush.in:2222/~/repository.git
   - git add ~/$UPSTREAM_BUILD_DIR
-  - git commit -m "Initial build"
-  # Ensure the target is in git mode
+  - git commit -m "Build $PSITE"
+  # Ensure the targets are in git mode
   - drush psite-cmode $PUUID dev git
-  - git push --force pantheon $PSITE
+  - drush psite-cmode $PUUID dev git
+  - git push --force pantheon_install $PSITE
+  - git push --force pantheon_upgrade $PSITE
 
   # Create a new Pantheon environment using the above branch.
   - drush psite-ecreate $PUUID $PSITE --source=$PSOURCE || true
+  - drush psite-ecreate $PUUID2 $PSITE --source=$PSOURCE || true
 
   # Update our drush aliases file.
   - drush paliases
@@ -89,7 +96,9 @@ before_script:
 
   # We cannot be in a Drupal directory to run aliased drush commands.
   - cd $HOME
-
+  # We need to create the settings.php file in order to run drush commands for
+  # the fresh installation.
+  - drush @pantheon.$PNAME.$PSITE si
   # When new modules are added to the codebase, updb can sometimes fail (thus
   # causing a failed build) because the system table and modules are out of
   # sync. We get around this by clearing all caches before attempting anything.
@@ -97,16 +106,18 @@ before_script:
   # cache clears / block rehashes.
   - drush @pantheon.$PNAME.$PSITE cc all --strict=0 || true
 
-  # Run all available updates as if deploying. For now, append the
+  # Run all available updates on the upgrade site as if deploying. For now, append the
   # --strict=0 option for Drush 6.x compatibility on Pantheon.
-  - drush @pantheon.$PNAME.$PSITE updb -y --strict=0
+  - drush @pantheon.$PNAME2.$PSITE updb -y --strict=0
 
   # Enable additional test dependencies here, like SimpleTest.
   - drush @pantheon.$PNAME.$PSITE en simpletest -y --strict=0
+  - drush @pantheon.$PNAME2.$PSITE en simpletest -y --strict=0
 
   # If you're using SimpleTest, you'll want to disable verbose logging. This
   # ensures no false build failures from file write errors.
   - drush @pantheon.$PNAME.$PSITE vset -y simpletest_verbose 0 --strict=0
+  - drush @pantheon.$PNAME2.$PSITE vset -y simpletest_verbose 0 --strict=0
 
 script:
   #
@@ -115,15 +126,17 @@ script:
   # likes to exit with odd codes if you run multiple classes at once.
   # You may have to run one class at a time.
   #
-  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
-  - drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0
+  #- drush @pantheon.$PNAME.$PSITE test-run MyTestClass --strict=0
+  #- drush @pantheon.$PNAME.$PSITE test-run MyTestClass2 --strict=0
 
 after_script:
   # Destroy the Pantheon environment
-  - drush psite-edelete $PUUID $PSITE -y
+  #- drush psite-edelete $PUUID $PSITE -y
 
   # Delete the git branch we created.
-  - cd $TRAVIS_BUILD_DIR; git push pantheon :$PSITE
+  - cd $UPSTREAM_BUILD_DIR;
+  - git remote-add upstream git@github.com:pantheon-learning/10s2cl-drops7.git
+  - git push --force upstream $PSITE
 notifications:
   email:
     recipients:

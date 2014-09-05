@@ -47,6 +47,10 @@ env:
     - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 
 before_install:
+    # Place a passphrase-free ssh key so that you can clone and push to your
+    # Pantheon git repository.
+    #
+    # Use the travis encrypt-file command to generate your own.
     - openssl aes-256-cbc -K $encrypted_dfede703c127_key -iv $encrypted_dfede703c127_iv -in travis_rsa.enc -out ~/.ssh/id_rsa -d
     - chmod 0600 ~/.ssh/id_rsa
 
@@ -63,11 +67,14 @@ before_script:
 script:
   # - bash scripts/run_tests.sh
     - pwd
-    - ls -la $PNAME
 
 after_script:
   # - $HOME/travis-ci.sh after-tests
   # - bash scripts/after_script.sh
+
+after_success:
+  # maybe promote to test here?
+    - git status
 
 notifications:
   email:

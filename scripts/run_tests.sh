@@ -1,5 +1,9 @@
 #!/bin/bash
+# Set things up
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+git config --global user.email "bot@getpantheon.com"
+git config --global user.name "Pantheon Automation"
+
 
 # Build the makefile
 drush make --working-copy example.make $HOME/.build/$PNAME

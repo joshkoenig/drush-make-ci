@@ -46,6 +46,9 @@ env:
     # You can use $PHOST as a reference to the resulting multidev hostname.
     - PHOST="https://$PSITE-$PNAME.gotpantheon.com"
 
+before_install:
+    - openssl aes-256-cbc -K $encrypted_dfede703c127_key -iv $encrypted_dfede703c127_iv -in travis_rsa.enc -out ~\/.ssh/travis_rsa -d
+
 install:
   # Make some variables available to the travis-ci.sh script.
 

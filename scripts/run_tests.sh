@@ -2,7 +2,7 @@
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Build the makefile
-drush make example.make $HOME/.build/$PNAME
+drush make --working-copy example.make $HOME/.build/$PNAME
 cd $HOME/.build/$PNAME
 git add .
 git commit -a -m "Automatic makefile build by Travis CI"

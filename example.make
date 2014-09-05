@@ -2,6 +2,11 @@
 core = "7.x"
 api = "2"
 
+; +++++ Specify Pantheon for teh core +++++
+projects[pantheon][type] = "core"
+projects[pantheon][download][type] = "git"
+projects[pantheon][download][url] = "ssh://codeserver.dev.7b67ea8d-0c67-41ec-9358-147b74181022@codeserver.dev.7b67ea8d-0c67-41ec-9358-147b74181022.drush.in:2222/~/repository.git"
+
 ; +++++ Modules +++++
 
 projects[admin_menu][version] = "3.0-rc4"
@@ -37,12 +42,6 @@ projects[elements][subdir] = "contrib"
 projects[entity][version] = "1.5"
 projects[entity][subdir] = "contrib"
 
-projects[pantheon_api][version] = "1.0"
-projects[pantheon_api][subdir] = "contrib"
-
-projects[pantheon_login][version] = "1.0"
-projects[pantheon_login][subdir] = "contrib"
-
 projects[ckeditor][version] = "1.15"
 projects[ckeditor][subdir] = "contrib"
 
@@ -51,9 +50,3 @@ projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = "contrib"
-
-; +++++ TODO modules without versions +++++
-
-projects[queues][version] = "" ; TODO add version
-projects[queues][subdir] = "contrib"
-

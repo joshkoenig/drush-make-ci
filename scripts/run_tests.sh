@@ -1,6 +1,12 @@
 #!/bin/bash
 
-#
+# Build the makefile
+drush make example.make $HOME/.build/$PNAME
+cd $HOME/.build/$PNAME
+git add -a
+git commit . -m "Automatic makefile build by Travis CI"
+git push origin master
+
 # This is where you run your tests, be they SimpleTest, Casper, Behat,
 # or otherwise. Here's a SimpleTest example. I've found that drush
 # likes to exit with odd codes if you run multiple classes at once.

@@ -56,8 +56,6 @@ before_install:
 
 install:
   # Make some variables available to the travis-ci.sh script.
-
-  # Copy the script into a stable location.
     - bash scripts/install.sh
 
 before_script:
@@ -65,16 +63,17 @@ before_script:
   # - bash scripts/before_script.sh
 
 script:
-  # - bash scripts/run_tests.sh
-    - pwd
+    - bash scripts/run_tests.sh
 
 after_script:
   # - $HOME/travis-ci.sh after-tests
   # - bash scripts/after_script.sh
 
 after_success:
-  # maybe promote to test here?
-    - git status
+  # Maybe promote to test here?
+
+after_failure:
+  # Maybe roll back?
 
 notifications:
   email:

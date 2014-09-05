@@ -16,4 +16,3 @@ drush cc drush -v
 
 # Install additional test dependencies here (like Casper, Behat, etc).
 
-git clone ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $PNAME

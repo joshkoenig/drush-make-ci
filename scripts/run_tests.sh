@@ -1,10 +1,11 @@
 #!/bin/bash
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Build the makefile
 drush make example.make $HOME/.build/$PNAME
 cd $HOME/.build/$PNAME
-git add -a
-git commit . -m "Automatic makefile build by Travis CI"
+git add .
+git commit -a -m "Automatic makefile build by Travis CI"
 git push origin master
 
 # This is where you run your tests, be they SimpleTest, Casper, Behat,

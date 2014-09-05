@@ -63,6 +63,7 @@ before_script:
 script:
   # - bash scripts/run_tests.sh
     - pwd
+    - ls -la $PNAME
 
 after_script:
   # - $HOME/travis-ci.sh after-tests

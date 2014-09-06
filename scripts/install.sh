@@ -4,8 +4,9 @@
 # that we mean to connect to an unknown host. We ignore those here.
 echo "StrictHostKeyChecking no" > ~/.ssh/config
 
-# Install Drush.
+# Install Drush and Behat
 composer global require drush/drush:6.2.0 -v
+composer global require behat/behat:3.0.*@stable -v
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Install Terminus.

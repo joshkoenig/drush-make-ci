@@ -4,7 +4,7 @@
 drush pauth $PEMAIL --password=$PPASS
 
 # Add Pantheon as a remote to our repo and force push to it.
-# $TRAVIS_BUILD_DIR 
+# $TRAVIS_BUILD_DIR
 cd $TRAVIS_BUILD_DIR
 
 #  Checkout the branch for the site
@@ -17,8 +17,8 @@ git remote add pantheon ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.
 git push --force pantheon $PSITE
 
 # Create a new Pantheon environment using the above branch.
-# $PSOURCE is defined in the global env settings of travis
-drush psite-ecreate $PUUID $PSITE --source=$PSOURCE || true
+# $PENV is defined in the global env settings of travis
+drush psite-ecreate $PUUID $PSITE --source=$PENV || true
 
 # Update our drush aliases file.
 drush paliases
@@ -34,8 +34,8 @@ cd $HOME
 # The "|| true" works around issues where Views and Block conflict during
 # cache clears / block rehashes.
 
-# $PSOURCE is defined in the global env settings of travis
-drush @pantheon.$PNAME.$PSITE cc all --strict=0 || true
+# $PENV is defined in the global env settings of travis
+drush @pantheon.$PNAME.$PENV cc all --strict=0 || true
 
 # Run all available updates as if deploying. For now, append the
 # --strict=0 option for Drush 6.x compatibility on Pantheon.

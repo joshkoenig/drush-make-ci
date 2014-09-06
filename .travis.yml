@@ -14,7 +14,7 @@ env:
 
     # The Pantheon environment name from which Multidev DB/files will be pulled.
     # Probably one of: dev, test, live.
-    - PSOURCE='dev'
+    - PENV='dev'
 
     #
     # PEMAIL environment variable: represents the Pantheon account e-mail with

@@ -25,9 +25,11 @@ git config --global user.email "bot@getpantheon.com"
 git config --global user.name "Pantheon Automation"
 
 
-# Build the makefile
+# Build the makefile into a separate dir so it is a distinct git working copy.
+cd $TRAVIS_BUILD_DIR
 drush make --working-copy example.make $HOME/.build/$PNAME
 cd $HOME/.build/$PNAME
+# Push it real good.
 git add .
 git commit -a -m "Automatic makefile build by Travis CI"
 git push origin master

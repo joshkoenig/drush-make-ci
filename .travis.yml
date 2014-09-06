@@ -16,7 +16,9 @@ env:
     # Probably one of: dev, test, live.
     - PENV='dev'
 
-    #
+    # A random password for the drupal site install.
+    - RANDPASS=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 )
+
     # PEMAIL environment variable: represents the Pantheon account e-mail with
     # access to this site. Used to authenticate to Pantheon via Terminus. You
     # must cd to your project root and run:

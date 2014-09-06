@@ -17,3 +17,17 @@ drush cc drush -v
 
 # Install additional test dependencies here (like Casper, Behat, etc).
 
+# Setup step 1: Terminus and aliases
+drush pauth $PEMAIL --password=$PPASS
+drush paliases
+
+git config --global user.email "bot@getpantheon.com"
+git config --global user.name "Pantheon Automation"
+
+
+# Build the makefile
+drush make --working-copy example.make $HOME/.build/$PNAME
+cd $HOME/.build/$PNAME
+git add .
+git commit -a -m "Automatic makefile build by Travis CI"
+git push origin master

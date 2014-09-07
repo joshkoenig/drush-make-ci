@@ -29,6 +29,10 @@ git config --global user.name "Pantheon Automation"
 cd $TRAVIS_BUILD_DIR
 drush make --working-copy example.make $HOME/.build/$PNAME
 cd $HOME/.build/$PNAME
+
+# Make sure we are in git mode
+drush psite-cmode $PUUID $PENV git
+
 # Push it real good.
 git add .
 git commit -a -m "Automatic makefile build by Travis CI"

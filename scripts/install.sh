@@ -7,7 +7,7 @@ echo "StrictHostKeyChecking no" > ~/.ssh/config
 # Install Drush and Behat
 comopser install
 # Use that as our path
-export PATH="vendor/bin:$PATH"
+export PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
 
 # Install Terminus.
 git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus

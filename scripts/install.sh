@@ -30,6 +30,9 @@ cd $TRAVIS_BUILD_DIR
 drush make --working-copy example.make $HOME/.build/$PNAME
 cd $HOME/.build/$PNAME
 
+# Guard against permissions on sites/default
+chmod u+w sites/default
+
 # Make sure we are in git mode
 drush psite-cmode $PUUID $PENV git
 

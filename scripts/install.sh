@@ -5,7 +5,7 @@
 echo "StrictHostKeyChecking no" > ~/.ssh/config
 
 # Install Drush and Behat
-comopser install
+composer install
 # Use that as our path
 export PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
 

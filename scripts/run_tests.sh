@@ -1,6 +1,6 @@
 #!/bin/bash
 # Set things up
-export PATH="vendor/bin:$PATH"
+export PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
 
 # Wipe out the DB
 drush psite-ewipe $PUUID $PENV -y

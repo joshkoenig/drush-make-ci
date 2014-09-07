@@ -15,8 +15,6 @@ cd $HOME/.drush/terminus
 composer update --no-dev -v
 drush cc drush -v
 
-# Install additional test dependencies here (like Casper, Behat, etc).
-
 # Setup step 1: Terminus and aliases
 drush pauth $PEMAIL --password=$PPASS
 drush paliases
@@ -27,8 +25,15 @@ git config --global user.name "Pantheon Automation"
 
 # Build the makefile into a separate dir so it is a distinct git working copy.
 cd $TRAVIS_BUILD_DIR
-drush make --working-copy example.make $HOME/.build/$PNAME
+git clone ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $HOME/.build/repo
+drush make example.make $HOME/.build/$PNAME
+
+# Git history switcharoo to generate a specific dif-set.
+mv $HOME/.build/repo/.git $HOME/.build/$PNAME/.git
 cd $HOME/.build/$PNAME
+
+# Output of the diff vs upstream.
+git status
 
 # Guard against permissions on sites/default
 chmod u+w sites/default
@@ -38,5 +43,5 @@ drush psite-cmode $PUUID $PENV git
 
 # Push it real good.
 git add .
-git commit -a -m "Automatic makefile build by Travis CI"
+git commit -a -m "Makefile build by CI: $TRAVIS_COMMIT"
 git push origin master

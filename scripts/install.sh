@@ -5,9 +5,9 @@
 echo "StrictHostKeyChecking no" > ~/.ssh/config
 
 # Install Drush and Behat
-composer global require drush/drush:6.2.0 -v
-composer global require behat/behat:3.0.*@stable -v
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+comopser install
+# Use that as our path
+export PATH="vendor/bin:$PATH"
 
 # Install Terminus.
 git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus

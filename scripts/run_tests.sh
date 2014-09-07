@@ -1,6 +1,6 @@
 #!/bin/bash
 # Set things up
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="vendor/bin:$PATH"
 
 # Wipe out the DB
 drush psite-ewipe $PUUID $PENV -y

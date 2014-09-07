@@ -25,23 +25,25 @@ git config --global user.name "Pantheon Automation"
 
 # Build the makefile into a separate dir so it is a distinct git working copy.
 cd $TRAVIS_BUILD_DIR
-git clone ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $HOME/.build/repo
+git clone --shallow ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $HOME/.build/repo
 drush make example.make $HOME/.build/$PNAME
+
+# Do the settings.php shuffle for an empty settings.php
+# This prevents permissions issues with the sites/default directory
+cp $HOME/.build/$PNAME/sites/default/default.settings.php $HOME/.build/$PNAME/sites/default/settings.php
 
 # Git history switcharoo to generate a specific dif-set.
 mv $HOME/.build/repo/.git $HOME/.build/$PNAME/.git
 cd $HOME/.build/$PNAME
 
 # Output of the diff vs upstream.
+echo "Here's the status change!"
 git status
-
-# Guard against permissions on sites/default
-chmod u+w sites/default
 
 # Make sure we are in git mode
 drush psite-cmode $PUUID $PENV git
 
 # Push it real good.
-git add .
+git add --all
 git commit -a -m "Makefile build by CI: $TRAVIS_COMMIT"
 git push origin master

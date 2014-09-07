@@ -50,3 +50,6 @@ projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = "contrib"
+
+projects[paranoia] = "7.x"
+projects[paranoia][subdir] = "contrib"

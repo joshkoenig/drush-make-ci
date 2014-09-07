@@ -11,4 +11,5 @@ drush psite-cmode $PUUID $PENV sftp
 # Install
 drush @pantheon.$PNAME.$PENV si --account-pass=$RANDPASS --site-name="Travis Did It" -y
 
-# TODO: bhat test
+# Run the barebones behat test
+behat

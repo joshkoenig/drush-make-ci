@@ -5,7 +5,7 @@ api = "2"
 ; +++++ Specify Pantheon for teh core +++++
 projects[pantheon][type] = "core"
 projects[pantheon][download][type] = "git"
-projects[pantheon][download][url] = "ssh://codeserver.dev.7b67ea8d-0c67-41ec-9358-147b74181022@codeserver.dev.7b67ea8d-0c67-41ec-9358-147b74181022.drush.in:2222/~/repository.git"
+projects[pantheon][download][url] = "https://github.com/pantheon-systems/drops-7.git"
 
 ; +++++ Modules +++++
 
@@ -50,6 +50,3 @@ projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = "contrib"
-
-projects[paranoia] = "7.x"
-projects[paranoia][subdir] = "contrib"

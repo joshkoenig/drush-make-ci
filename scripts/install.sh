@@ -25,7 +25,7 @@ git config --global user.name "Pantheon Automation"
 
 # Build the makefile into a separate dir so it is a distinct git working copy.
 cd $TRAVIS_BUILD_DIR
-git clone --shallow ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $HOME/.build/repo
+git clone --depth 2 ssh://codeserver.dev.$PUUID@codeserver.dev.$PUUID.drush.in:2222/~/repository.git $HOME/.build/repo
 drush make example.make $HOME/.build/$PNAME
 
 # Do the settings.php shuffle for an empty settings.php

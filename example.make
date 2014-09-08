@@ -53,3 +53,6 @@ projects[views_bulk_operations][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
+
+projects[imagefield][version] = "1.2"
+projects[imagefield][subdir] = "contrib"

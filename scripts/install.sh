@@ -3,6 +3,7 @@
 # Dynamic hosts through Pantheon mean constantly checking interactively
 # that we mean to connect to an unknown host. We ignore those here.
 echo "StrictHostKeyChecking no" > ~/.ssh/config
+export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
 
 # Install Drush and Behat
 composer install
@@ -45,7 +46,6 @@ git status
 drush psite-cmode $PUUID $PENV git
 
 # Nice commite messages
-export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
 
 # Push it real good.
 git add --all

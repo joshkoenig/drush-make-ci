@@ -43,7 +43,10 @@ git status
 # Make sure we are in git mode
 drush psite-cmode $PUUID $PENV git
 
+# Nice commite messages
+export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
+
 # Push it real good.
 git add --all
-git commit -a -m "Makefile build by CI: $TRAVIS_COMMIT"
+git commit -a -m "Makefile build by CI: '$TRAVIS_COMMIT_MSG'"
 git push origin master

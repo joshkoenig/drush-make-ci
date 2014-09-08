@@ -1,14 +1,14 @@
-### Build Status
+#### Build Status
 [![Build Status](https://travis-ci.org/joshkoenig/drush-make-ci.svg?branch=master)](https://travis-ci.org/joshkoenig/drush-make-ci)
 
-drush_make + TravisCI = awesome
+```drush_make + TravisCI = awesome```
 ======
 
-This is a working example of how you can integrate a drush_make process with Pantheon using TravisCI and some behat testing. Pretty suave!
+This is a working example of how you can integrate a drush_make process with [Pantheon](https://www.getpantheon.com) using [TravisCI](https://travis-ci.org) and some behat testing. Pretty suave!
 
 Feel free to hack this to heck for your own personal use-cases.
 
-#### Hacking Tops
+#### Getting Started
 
 This repo is meant to be run on [TravicCI](https://travis-ci.org), which is free for public GitHub repos (thanks, Travis!). You can be up and running with your own fork in just a few steps.
 
@@ -16,7 +16,7 @@ This repo is meant to be run on [TravicCI](https://travis-ci.org), which is free
 
 2. You will need to create a new SSH keypair to push code to Pantheon.
   ```
-  ssh-keygen -q -f travis-ci-key -t rsa -P '' -C 'travis-ci-integraiton-key'
+  ssh-keygen -q -f travis-ci-key -t rsa -P '' -C 'travis-ci-key'
   ```
 
 3. Add the resulting ```travis-ci-key.pub``` to the Pantheon user account you want Travis acting as. You can also set up a separate user for this to keep things separate more separate. I have mine acting as "josh+travis@getpantheon.com" to keep it on lockdown.
@@ -31,6 +31,8 @@ This repo is meant to be run on [TravicCI](https://travis-ci.org), which is free
 
 8. Finally, update ```behat.yml``` with your own ```base_url``` for testing.
 
-At this point you can push to master and the test should run as-is on your own repo. You're free to start hacking on the make file, the install steps, and the tests.
+At this point you can push these changes to the ci repo up to github, log into Travis, add the ci repo, and the test should run.
+
+You're free to start hacking on the make file, the install steps, and the tests.
 
 Pull requests are welcome!

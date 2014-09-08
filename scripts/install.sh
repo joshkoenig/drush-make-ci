@@ -17,7 +17,8 @@ composer update --no-dev -v
 drush cc drush -v
 
 # Setup step 1: Terminus and aliases
-drush pauth '$PEMAIL' --password=$PPASS
+echo "drush pauth $PEMAIL"
+drush pauth $PEMAIL --password=$PPASS
 drush paliases
 drush psite-wake $PUUID $PENV
 

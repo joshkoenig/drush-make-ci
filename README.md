@@ -25,7 +25,7 @@ This repo is meant to be run on [TravicCI](https://travis-ci.org), which is free
 
 5. Update ```.travis.yml``` with the ```PUUID``` and ```PNAME``` values for your own site.
 
-6. Use the (```travis encrypt```)[http://docs.travis-ci.com/user/build-configuration/#Secure-environment-variables] command to add secure/secret environment variables to ```.travis.yml``` for ```PEMAIL``` (your Pantheon user email) and ```PPASS``` (the user passsword).
+6. Use the [```travis encrypt```](http://docs.travis-ci.com/user/build-configuration/#Secure-environment-variables) command to add secure/secret environment variables to ```.travis.yml``` for ```PEMAIL``` (your Pantheon user email) and ```PPASS``` (the user passsword).
 
 7. Still in ```.travis.yml```, update the ```before_install``` step  to use the key you added in step 3.
 

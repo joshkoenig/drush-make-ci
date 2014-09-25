@@ -10,7 +10,7 @@ Feel free to hack this to heck for your own personal use-cases.
 
 #### Getting Started
 
-This repo is meant to be run on [TravicCI](https://travis-ci.org), which is free for public GitHub repos (thanks, Travis!). You can be up and running with your own fork in just a few steps.
+This repo is meant to be run on [TravisCI](https://travis-ci.org), which is free for public GitHub repos (thanks, Travis!). You can be up and running with your own fork in just a few steps.
 
 1. Create a new Pantheon site which is the "target" for your build. Use the vanilla version of core that you want to use. For this example, that was Drupal 7.
 
